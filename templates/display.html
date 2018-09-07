@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+  {% for message in get_flashed_messages() %}
+  <div class="alert alert-warning" style="background-color:rgb(62,61,64); color: rgb(247,246,255)">
+    <button type="button" class="close" style="color: rgb(247,246,255" data-dismiss="alert">&times;</button>
+    {{ message }}
+  </div>
+    {% endfor %}
+
+    {% block page_content %}
+    {{ wtf.quick_form(form) }}
+    {% endblock %}
+</div>
+<hr>
+<div class="container">
+  <ul class="list-group">
+    {% for post in posts %}
+    <div style="color: rgb(247,246,255)">
+      <li class="list-group-item d-flex justify-content-start align-items-center" style="background-color:rgb(62,61,64)">
+      {{post.body}}
+      <span class="badge badge-primary badge-pill">{{ moment(post.timestamp).fromNow() }}</span>
+      {% if role == 'admin' %}
+      <hr>
+      <a href="{{ url_for('.edit', id=post.id, role = role)}}" style="color: rgb(62,61,64); font-size:20px;"><button type="button" class="btn btn-dark btn-sm text-white" style="font-size:15px;">Update</button></a>
+      <a href="{{ url_for('.delete', id=post.id, role = role)}}" style="color: rgb(62,61,64);"><button type="button" class="btn btn-dark btn-sm text-white" style="font-size:15px;">Delete</button></a>
+      {% endif %}
+      </li>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

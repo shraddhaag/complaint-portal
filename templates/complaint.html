@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+  {% for message in get_flashed_messages() %}
+  <div class="alert alert-warning" style="background-color:rgb(62,61,64); color: rgb(247,246,255)">
+    <button type="button" class="close" style="color: rgb(247,246,255" data-dismiss="alert">&times;</button>
+    {{ message }}
+  </div>
+  {% endfor %}
+
+  {% block page_content %}
+  {{ wtf.quick_form(form) }}
+  {% endblock %}
+</div>
+
+{% endblock %}

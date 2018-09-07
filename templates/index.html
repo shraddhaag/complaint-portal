@@ -1,0 +1,33 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block head %}
+{{ super() }}
+<!--<link rel="stylesheet" type=text/css href="{{url_for('static', filename = 'css/style.css')}}">-->
+<link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+<style media="screen">
+body{
+  color: rgb(59,57,64);
+  background-color: rgb(247,246,255);
+  font-size: 20px;
+  font-family: 'Fjalla One', sans-serif;
+};
+</style>
+{%endblock%}
+
+{% block content %}
+<div style=" margin-top: 0px; height: 700px; width: 100%; background-color:rgb(62,61,64); color: rgb(247,246,255);">
+  <div style="padding: 100px 0 0 150px ">
+    <h1 style="font-size: 100px;">COMPLAINT PORTAL</h1>
+    <p style="padding-top: 50px; font-size:37px;">A platform where anyone can post complaints anonymously.</p>
+    <div style="padding-top:50px;">
+      <a href="{{url_for('.complaint')}}" style="color:rgb(59,57,64)"><button style="width: 440px; height:80px; background-color:rgb(247,246,255); border-radius: 10px; font-size: 30px">Post a complaint anonymously</button></a>
+      <a href="{{url_for('.login')}}" style="color:rgb(59,57,64)"><button style="width: 440px; height:80px; background-color:rgb(247,246,255); border-radius: 10px; font-size: 30px;">Adminstrator Login</button></a>
+    </div>
+
+  </div>
+</div>
+
+
+  </div>
+{% endblock %}

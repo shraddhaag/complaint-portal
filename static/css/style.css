@@ -1,0 +1,10 @@
+body{
+  color: rgb(59,57,64);
+  background-color: rgb(247,246,255);
+}
+
+.label-heading{
+b<form method="POST">
+  <p style="font-size:50px;">{{ form.body.label }}</p> {{ form.body(style="height:100px; width:100%; border-radius: 15px; background-color:rgb(185,184,191);color: rgb(247,246,255)") }}
+  {{ form.submit(class="btn btn-dark btn-sm text-white", style="color: rgb(247,246,255);font-size:15px; background-color:rgb(62,61,64)") }}
+</form>
