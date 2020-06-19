@@ -17,4 +17,4 @@ Make sure all dependencies are installed in your virtual environment.
 
 create all dbs
 
-run inex.py to start the server
+run index.py to start the server
